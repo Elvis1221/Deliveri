@@ -7,7 +7,7 @@ body {
     padding-top: 44px;
 }
 
-.conteiner {
+.container {
     max-width: 1200px;
     margin: auto;
 }
@@ -36,11 +36,11 @@ body {
 .input-search {
     background-image: url("img/input-search.svg");
     width: 300px;
-    height: 34px;
+    margin-left: auto;
 }
 
 .input-address {
-    width: 690px;
+    flex: 0.8;
     background-image: url("img/home.svg");
 }
 
@@ -65,12 +65,16 @@ body {
 
 }
 
-.button-primeri {
+.button-primary {
     background: #1890FF;
     border: 1px solid #1890FF;
     color: white;
     margin-right: 10px;
 
+}
+
+.button-card-text {
+    margin-right: 10px;
 }
 
 .button-icon {
@@ -84,7 +88,7 @@ body {
 
 .promo {
     box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);
-    background: #FFF1B8 url("img/promo-image.png") no-repeat top right -200px/1000px; /* разобраться с картинкой*/
+    background: #FFF1B8 url("img/promo-image.png") no-repeat top right -200px/1100px; /* разобраться с картинкой*/
     border-radius: 10px;
     padding: 68px 70px;
     margin-bottom: 56px;
@@ -110,7 +114,6 @@ body {
 .section-heading {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     margin-bottom: 44px;
 }
 
@@ -121,6 +124,7 @@ body {
     line-height: 42px;
     margin: 0;
     color: #000000;
+    margin-right: 30px;
 }
 
 .cards {
@@ -136,8 +140,10 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     border-radius: 7px;
     overflow: hidden;
-    width: 384px;
+    /*max-width: 384px;*/
+    flex-basis: 31%;
     margin-bottom: 30px;
+    text-decoration: none;
 }
 
 .card-image {
@@ -148,17 +154,25 @@ body {
 
 .card-text {
     padding: 20px 23px 35px 23px;
+
 }
+
 .card-heading {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .card-title {
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
     line-height: 32px;
+}
+
+.card-title-reg {
+    font-weight: normal;
+    flex-wrap: wrap;
 }
 
 .card-tag {
@@ -172,22 +186,44 @@ body {
     padding: 1px 8px;
 
 }
-.card-info {
+
+.card-info, .restaurant-info {
     display: flex;
     align-items: center;
-    width: 227px;
-    height: 32px;
+    /*width: 227px;*/
+    /*height: 32px;*/
+    flex-wrap: wrap;
+    /*margin-bottom: 24px;*/
 }
+
+/*.restaurant-info {*/
+/*    display: flex;*/
+/*}*/
+
+.card-price-bold {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 32px;
+    margin-left: 30px;
+}
+
+.card-buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+}
+
 .rating {
     margin-right: 26px;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 32px;
-    color: #FFC107;
-;
+    color: #FFC107;;
 
 }
+
 .prise,
 .category {
     color: #8C8C8C;
@@ -195,17 +231,265 @@ body {
     line-height: 32px;
 
 }
+
 .prise {
     margin-right: 10px;
 }
+
+.ingredients {
+    color: #8C8C8C;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.category {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 150px;
+}
+
 .prise:after {
     content: "";
     width: 5px;
     height: 5px;
-    background-color:#8C8C8C ;
+    background-color: #8C8C8C;
     display: inline-block;
     border-radius: 50%;
     margin-left: 10px;
     vertical-align: middle;
 
+}
+
+.main {
+    background: linear-gradient(180deg, rgba(245, 245, 245, 0) 1.04%, #F5F5F5 100%);
+}
+
+.footer {
+    padding: 60px 0;
+}
+
+.footer-link {
+
+}
+
+.footer-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-link {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #595959;
+    text-decoration: none;
+}
+
+.footer-link:not(:last-child) {
+    margin-right: 15px;
+}
+
+.footer-nav {
+    margin-left: 35px;
+    margin-right: auto;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+}
+
+.social-link:not(:last-child) {
+    margin-right: 21px;
+}
+
+@media (max-width: 1366px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .promo {
+        background-size: 1100px;
+        background-position: center right -200px;
+    }
+
+    .rating {
+        margin-right: 15px;
+    }
+
+    .category, .prise {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 750px;
+    }
+
+    .promo {
+        padding: 50px;
+        background-size: 1000px;
+        background-position: center right -200px;
+    }
+
+    .promo-text {
+        font-size: 18px;
+        max-width: 400px;
+    }
+
+    .card {
+        flex-basis: 49%;
+    }
+
+    .footer-link {
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 560px;
+    }
+
+    .card-info {
+        flex-wrap: wrap;
+    }
+
+    .card-title {
+        font-size: 18px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .card.rating {
+        flex-basis: 100%;
+    }
+
+    .promo-title {
+        font-size: 24px;
+        line-height: 1.4;
+    }
+
+    .promo {
+        background-size: 700px;
+        background-position: top 50px right -200px;
+    }
+
+    .promo-text {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 578px) {
+    .container {
+        max-width: 90%;
+    }
+
+    .header {
+        flex-wrap: wrap;
+    }
+
+    .input-address {
+        order: 5;
+        margin-top: 15px;
+        flex: 1;
+    }
+
+    .promo {
+        background-image: none;
+    }
+
+    .promo-title {
+        margin-bottom: 10px;
+
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .card {
+        flex-basis: 100%;
+    }
+
+    .card-image {
+        width: 100%;
+    }
+
+    .footer {
+        padding: 30px 0;
+    }
+
+    .footer-block {
+        align-items: flex-start;
+        /*justify-content: space-between;*/
+
+    }
+
+    .footer-nav {
+        margin-left: 0;
+        margin-right: 0;
+        order: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-logo {
+        order: 1;
+        margin-right: 15px;
+    }
+
+    .social-links {
+        order: 2;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .button-text {
+        display: none;
+    }
+
+    .button {
+        min-height: 40px;
+    }
+
+    .button-icon {
+        margin: 0;
+    }
+
+    .section-heading {
+        flex-wrap: wrap;
+    }
+
+    .promo {
+        padding: 20px;
+    }
+
+    .footer-block {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-logo {
+        order: 0;
+        margin-bottom: 20px;
+    }
+
+    .footer-nav {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .footer-link:not(:last-child) {
+        margin-right: 0;
+    }
 }
